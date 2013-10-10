@@ -1,0 +1,11 @@
+2.1
+- Add stack calls for attrib values <element value1="foo" value2="bar"> done
+- Add DTD parser
+- Add <?version?> parser - done partially
+- Set proper XML_BUFFER_SIZE's for tag elements
+- Add comments parser
+
+2.2
+- Major code cleanup
+- Better stack handling
+- Fix up the free'ing stuff

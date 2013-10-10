@@ -1,0 +1,16 @@
+2002-04-26
+- Major engine rewrite from the original source.  Uses <string.h> for parsing
+2002-04-27
+- Added stack to hold values
+2002-04-27
+- Added the rest of code from the old parser
+- Changed XMLNode datatype on the stack to now return void *
+- Added header file defines
+- Released 2.0
+2002-04-28
+- Attributes feature added.  This will only parse attributes on one line.
+- Added xml_get_attribs
+- xml_get_value now returns a pointer to XMLNode
+2002-05-06
+- Added minimal support for process instructions
+- Added minimal XML state enumerations

@@ -1,0 +1,57 @@
+LXMLP (Light XML Parser) 2.1
+
+ LXMLP is a simple and fast XML parser with very little error 
+ handling, although I hope to change this as the code 
+ matures.
+
+ This code is originally based off of a BCIT assignment for
+ the C Programming Language 2 course, and I have taken
+ the parser out of that project and made it version 2.0.
+ 1.0 was horrific.
+
+How to Compile
+ 
+ This should work on most platforms.  I've compiled this with
+ Mingw and Linux.  
+
+ Simply run 'make' to compile xml-test
+ 
+LXMLP API Reference
+
+ #include "xml-parser.h"
+ 
+ typedef struct {
+ 	char name[XML_BUFFER_SIZE];
+        char value[XML_BUFFER_SIZE];
+ } XMLNode;
+ 
+ void xml_set_handlers(XML_Start_Handler start, XML_End_Handler end);
+ 	This should be called before any other function calls.  Use
+	this to set the start element function and end handler function
+	(used later, called by function pointer)
+
+	example: 
+	
+	void start_element(char *element_name);
+	void end_element(char *element_name);
+	...
+	xml_set_handlers(start_element, end_element);
+	...
+	
+ 
+ XMLNode *xml_get_value()
+ 	This function should be used ONLY in the start element user function
+	to get the values in the element.  NULL is returned if the value
+	stack is empty.
+
+ 	example:
+
+	XMLNode *attrib;
+	attrib = xml_get_value();
+	printf("%s %s\n", attrib->name, attrib->value);
+
+ void xml_parse_chunk(char *chunk);
+ 	This is the main parsing routine.  Simply parse *chunk and dispatch
+	the start and end element function pointers.
+
+ see xml-test.c for an example

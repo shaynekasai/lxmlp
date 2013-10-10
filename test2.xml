@@ -1,0 +1,5 @@
+<?xml version="1.0" foo="bar"?>
+<toplevel>
+	<cd value="testing" name="test" hello="world">test</cd>
+        <chunk>hello</chunk>
+</toplevel>

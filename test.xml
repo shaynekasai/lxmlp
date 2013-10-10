@@ -1,0 +1,6 @@
+<test>
+  <this value="foo">this is a test</this>
+  <another value="another test">
+    <even>test</even>
+  </another>
+</test>

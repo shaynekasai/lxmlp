@@ -1,0 +1,4 @@
+- xml_stack_pop() is of type XMLNode, however, this should return just
+  a void * to the data and then free the node. - done
+- free() needs to be done on the stack
+- attribs can only be parsed on one line.  There is no XML_STATE
